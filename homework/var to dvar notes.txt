@@ -1,0 +1,162 @@
+str → bool  (WHY it works)
+
+bool("Dinesh")   # True
+
+Any non-empty string → True
+Empty string "" → False
+
+Python does NOT look at the content of the string.
+It only checks:
+
+Is the string empty?
+Or not?
+
+
+str → int  (WHY it fails)
+
+int() expects a string that contains only digits
+
+int("123")   → 123
+int("-45")   → -45
+
+Python doesn’t know how to convert letters into a number → ValueError
+
+
+str → float  (WHY it fails)
+
+Float() expects a string that contains only float values
+
+float("3.14") → 3.14
+float("10")   → 10.0
+
+str → complex (WHY it fails)
+
+complex() expects a numeric string format:
+
+complex("3")        → (3+0j)
+complex("2+5j")     → (2+5j)
+
+
+
+int → bool (WHY it works)
+
+bool(0)     # False
+bool(5)     # True
+bool(-3)    # True
+
+
+Zero → False
+Any non-zero integer → True
+
+
+int → str (WHY it works)
+
+str(123)    # "123"
+
+
+str() converts the integer into its string representation
+
+int → float (WHY it works)
+
+float(5)    # 5.0
+
+Integer is converted into decimal form
+
+
+int → complex (WHY it works)
+
+complex(5)   # (5+0j)
+
+Integer becomes the real part
+Imaginary part is 0j
+
+
+bool → int (WHY it works)
+
+int(True)    # 1
+int(False)   # 0
+
+
+True is treated as 1
+False is treated as 0
+
+bool → float (WHY it works)
+
+float(True)    # 1.0
+float(False)   # 0.0
+
+
+Boolean is first converted to integer
+Then converted to float
+
+bool → complex (WHY it works)
+
+complex(True)    # (1+0j)
+complex(False)   # (0+0j)
+
+
+Boolean becomes the real part
+Imaginary part is 0j
+
+bool → str (WHY it works)
+
+str(True)    # "True"
+str(False)   # "False"
+
+
+Boolean value is converted into its string form
+
+
+float → bool (WHY it works)
+bool(0.0)    # False
+bool(2.5)    # True
+
+
+Zero value → False
+Any non-zero value → True
+
+
+float → int (WHY it works)
+int(3.7)    # 3
+
+
+Decimal part is removed
+No rounding is done
+
+float → str (WHY it works)
+str(3.14)   # "3.14"
+
+
+Float value is converted into string format
+
+
+float → complex (WHY it works)
+complex(3.5)   # (3.5+0j)
+
+
+Float becomes the real part
+Imaginary part is 0j
+
+
+complex → bool (WHY it works)
+bool(0+0j)    # False
+bool(3+4j)    # True
+
+
+If both real and imaginary parts are zero → False
+Otherwise → True
+
+
+complex → str (WHY it works)
+str(3+4j)   # "(3+4j)"
+
+
+Complex number is converted into string representation
+
+complex → int / float (WHY it fails)
+int(3+4j)    # TypeError
+float(3+4j)  # TypeError
+
+
+Complex numbers contain an imaginary part
+Real-only types cannot store imaginary values
